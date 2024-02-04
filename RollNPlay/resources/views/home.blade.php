@@ -315,13 +315,13 @@
             <div class="col-lg-6 col-md-12 col-12 carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <a href=""><img src="/images/septima.jpg" alt="blank image" class="img-fluid hero-banner"></a>
+                        <a href=""><img src="/images/septima_resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
                     </div>
                     <div class="carousel-item">
-                        <a href=""><img src="/images/lord_of_the_rings.jpg" alt="blank image" class="img-fluid hero-banner"></a>
+                        <a href=""><img src="/images/lord_of_the_rings_resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
                     </div>
                     <div class="carousel-item">
-                        <a href=""><img src="/images/the-witcher.jpg" alt="blank image" class="img-fluid hero-banner"></a>
+                        <a href=""><img src="/images/the-witcher-resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
                     </div>
                 </div>
             </div>
@@ -334,7 +334,7 @@
                         <a href=""><img src="/images/ticket-to-ride.jpg" alt="blank image" class="img-fluid square-banner"></a>
                     </div>
                     <div class="col-lg-12 col-md-12 col-12 landscape-banner-section">
-                       <a href=""><img src="/images/tribes-of-the-wind.webp" id="landscape_banner" alt="blank image" class="img-fluid"></a>
+                       <a href=""><img src="/images/tribes-of-the-wind-resize.webp" id="landscape_banner" alt="blank image" class="img-fluid"></a>
                     </div>
                 </div>
             </div>
@@ -385,7 +385,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-6 category">
                     <div><a href="">
-                        <img src="/images/century-spice-road.jpg" alt="blank image" class="img-fluid image-category">
+                        <img src="/images/century-spice-road-resize.jpg" alt="blank image" class="img-fluid image-category">
                         <p><strong>Special Editions</strong></p></a>
                     </div>
                 </div>
