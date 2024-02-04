@@ -47,7 +47,7 @@
             height: 100%;
             width: 100%;
             border-radius: 10px;
-            /* box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5); */
+            
         }
 
         #landscape_banner:hover{
@@ -59,6 +59,7 @@
         #shop_by_category_container {
             height: 95%;
             width: 95%;
+            margin-bottom: 8%;
         }
 
         #shop_by_category_header{
@@ -69,6 +70,7 @@
             background-color: rgb(228, 228, 228);
             border-radius: 10px;
             padding: 30px 30px 0px 30px;
+            box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
         }
 
         .image-category{
@@ -103,29 +105,50 @@
         }
 
         /* suggested game section */
-        /* there are two of them, one is displayed at alrger screens, and the other is for medium or lower screens */
-        #suggested_game_container{
-            margin-top: 10%;
+        /* there are two of them, one is displayed at larger screens, and the other is for medium or smaller screens */
+
+        #something_you_might_like{
+            display: block;
+            text-align: center;
+            margin-bottom: 1%;
+        }
+
+        /* larger screens css */
+        .suggested-game-container-lg{
             background-color: rgb(228, 228, 228);
             border-radius: 10px;
             width: 93.8%;
             padding: 2%;
             margin-bottom: 5%;
+            box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
         }
 
-        #suggested_game_container h3{
+        .suggested-game-container-lg h3{
             margin-bottom: 2%;
         }
 
-        #suggested_game_container #large_screen{
+        .suggested-game-container-lg #lg_description{
             margin-top: 20%;
             font-size: 180%;
+        }
+
+        /* smaller screens css */
+        .suggested-game-container-sm{
+            margin-bottom: 10%;
+            background-color: rgb(228, 228, 228);
+            border-radius: 10px;
+            width: 91.8%;
+            padding: 3% 5% 5% 5%;
+            box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .suggested-game-container-sm h3{
             margin-bottom: 2%;
         }
-        
-        #suggested_game_container #small_screen {
-            margin-top: 4%;
-            font-size: 200%;
+
+        .suggested-game-container-sm #sm_description{
+            margin-top: 2%;
+            font-size: 180%;
         }
 
         .suggested_game_price {
@@ -134,6 +157,7 @@
             font-size: 200%;
         }
 
+        /* input form section */
         .number-input-form {
             display: flex;
             height: 50px;
@@ -199,9 +223,25 @@
             background-color: rgba(0, 0, 255, 0.8);
             color: white;
         }
+
+        /* visit shop section */
+        .visit-shop {
+            text-align: center;
+            margin-top: 2%;
+            margin-bottom: 5%;
+        }
+
+        .visit-shop .btn{
+            width: 20%;
+            height: 50%;
+            border-radius: 0px 20px 0px 20px;
+            background-color: rgba(0, 128, 0, 0.8);
+        }
     </style>
     <script>
          $(document).ready(function(){
+
+            // on click event function that changes pictures whenever one of the four images were clicked
             $(".image-1").click(function(){
                 $(".main-image").attr("src", $(this).attr("src"));
             });
@@ -215,6 +255,7 @@
                 $(".main-image").attr("src", $(this).attr("src"));
             });
 
+            //prevents user from typing a number larger than 9
             $('.order-number').on('input', function() {
            let value = parseInt($(this).val(), 10);
            let maxValue = 9;
@@ -223,6 +264,7 @@
             }
             });
 
+            //ensures that the user only types numbers and not letters
             $('.order-number').on('keypress', function(event) {
             let allowedKeys = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 8];
             let keyCode = event.which;
@@ -231,12 +273,14 @@
             }
             });
 
+            //ensures that when the input form is out of focus, the value zero will be displayed again
             $('.order-number').on('blur', function() {
             if ($(this).val().trim() === '') {
             $(this).val('0');
             }
             });
 
+            //click event function that decreases the value of the input form
             $('.decrease-btn').click(function() {
             let inputField = $(this).siblings('.order-number');
             let value = parseInt(inputField.val(), 10);
@@ -245,6 +289,7 @@
             }
             });
 
+            //click event function that increases the value of the input form
             $('.increase-btn').click(function() {
             let inputField = $(this).siblings('.order-number');
             let value = parseInt(inputField.val(), 10);
@@ -362,7 +407,14 @@
 
     {{-- suggested game section --}}
 
-    <div class="container-fluid d-lg-block d-md-none d-none" id="suggested_game_container">
+    <div class="container" id="something_you_might_like">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <h1>Something you might like</h1>
+            </div>
+        </div>
+    </div>
+        <div class="container-fluid d-lg-block d-md-none d-none suggested-game-container-lg">
             <h3>Will you find the werewolf before he finds you?</h3>
             <div class="row">
                 <div class="col-lg-2 col-md-12 col-12">
@@ -378,7 +430,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="suggested_game_description">
-                        <h4 id="large_screen"><strong> One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
+                        <h4 id="lg_description"><strong> One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
                         <p class="suggested_game_price"><strong>₱1,400.00</strong></p>
                         <form action="" class="number-input-form">
                             <span class="btn decrease-btn">-</span>
@@ -392,9 +444,10 @@
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
 
-    <div class="container-fluid d-lg-none d-md-block d-block" id="suggested_game_container">
+
+    <div class="container-fluid d-lg-none d-md-block d-block suggested-game-container-sm">
         <h3>Will you find the werewolf before he finds you?</h3>
             <div class="row">
                 <div class="col-md-12 col-12">
@@ -418,7 +471,7 @@
                     </div>
                 <div class="col-md-12">
                     <div class="suggested_game_description">
-                        <h4 id="small_screen"><strong>One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
+                        <h4 id="sm_description"><strong>One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
                         <p class="suggested_game_price"><strong>₱1,400.00</strong></p>
                         <form action="" class="number-input-form">
                             <span class="btn decrease-btn">-</span>
@@ -432,6 +485,15 @@
                     </div>
                 </div>
             </div>
+        </div>
+    
+    <div class="container visit-shop">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <h1>Visit our shop to find out more</h1>
+                <button class="btn btn-success mt-3">Visit Shop</button>
+            </div>
+        </div>
     </div>
     @include('layouts/footer')
 </body>
