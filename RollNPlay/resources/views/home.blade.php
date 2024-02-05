@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
     @include('layouts/head')
+    <script src="js/home.js"></script>
+    <title>RollNPlay-Home</title>
     <style>
-        body{
-            background-color: #878787;
-        }
+      body{
+        background-color: grey;
+      }
 
-        /* hero banner section */
-        #hero_banner_section{
-            margin-top: 10%;
-        }
+      /* hero banner section css */
+      .hero-banner-section {
+        margin-top: 10%;
+      }
 
-        #banner_header, #shop_by_category_header {
+      #banner_header, #shop_by_category_header {
             display: block;
             margin-bottom: 2%;
             text-align: center; /* Center the content horizontally */
@@ -27,7 +28,7 @@
             border-radius: 10px;
         }
 
-        /* hero banner, square images */
+        /* hero banner, square images*/
         .square-banner{
             height: 100%;
             width: 100%;
@@ -56,8 +57,8 @@
             transform: scale(1.05);
         }
 
-        /* shop by category section */
-        #shop_by_category_container {
+         /* shop by category section */
+         #shop_by_category_container {
             height: 95%;
             width: 95%;
             margin-bottom: 8%;
@@ -105,7 +106,7 @@
             transform: scale(1.03);
         }
 
-        /* suggested game section */
+         /* suggested game section */
         /* there are two of them, one is displayed at larger screens, and the other is for medium or smaller screens */
 
         #something_you_might_like{
@@ -225,219 +226,228 @@
             color: white;
         }
 
-        /* visit shop section */
-        .visit-shop {
-            text-align: center;
-            margin-top: 2%;
-            margin-bottom: 5%;
-        }
-
-        .visit-shop .btn{
-            width: 20%;
-            height: 50%;
-            border-radius: 0px 20px 0px 20px;
-            background-color: rgba(0, 128, 0, 0.8);
-        }
     </style>
-    <script src="js/home.js"></script>
-    <title>RollNPlay-Home</title>
 </head>
 <body>
-    
-@include('layouts/navbar')
-    {{-- hero banner section --}}
+  {{-- navbar section --}}
+    @include('layouts/navbar')
 
-    <div class="container-fluid" id="hero_banner_section">
-        <div id="banner_header">
-            <h1>Ready to Roll&Play?</h1>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-12 carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init data-mdb-interval="5000">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <a href=""><img src="/images/septima_resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href=""><img src="/images/lord_of_the_rings_resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href=""><img src="/images/the-witcher-resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-12">
-                <div class="row d-flex">
-                    <div class="col-lg-6 col-md-6 col-6 square-banner-section">
-                        <a href=""><img src="/images/sleeping-gods.webp" alt="blank image" class="img-fluid square-banner"></a>
-                    </div> 
-                    <div class="col-lg-6 col-md-6 col-6 square-banner-section">
-                        <a href=""><img src="/images/ticket-to-ride.jpg" alt="blank image" class="img-fluid square-banner"></a>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-12 landscape-banner-section">
-                       <a href=""><img src="/images/tribes-of-the-wind-resize.webp" id="landscape_banner" alt="blank image" class="img-fluid"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    {{-- hero banner section --}}
+    <div class="container-fluid hero-banner-section">
+      <div id="banner_header">
+        <h1>Ready to Roll&Play?</h1>
     </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-12">
+          <div id="carousel_indicators" class="carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init>
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-mdb-target="#carousel_indicators"
+                data-mdb-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-mdb-target="#carousel_indicators"
+                data-mdb-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-mdb-target="#carousel_indicators"
+                data-mdb-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href=""><img src="/images/septima_resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
+              </div>
+              <div class="carousel-item">
+                <a href=""><img src="/images/lord_of_the_rings_resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
+              </div>
+              <div class="carousel-item">
+                <a href=""><img src="/images/the-witcher-resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="row d-flex">
+              <div class="col-lg-6 col-md-6 col-6 square-banner-section">
+                  <a href=""><img src="/images/sleeping-gods.webp" alt="blank image" class="img-fluid square-banner"></a>
+              </div> 
+              <div class="col-lg-6 col-md-6 col-6 square-banner-section">
+                  <a href=""><img src="/images/ticket-to-ride.jpg" alt="blank image" class="img-fluid square-banner"></a>
+              </div>
+              <div class="col-lg-12 col-md-12 col-12 landscape-banner-section">
+                 <a href=""><img src="/images/tribes-of-the-wind-resize.webp" id="landscape_banner" alt="blank image" class="img-fluid"></a>
+              </div>
+              </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
 
     {{-- shop by category section --}}
-    
     <div class="container-fluid" id="shop_by_category_container">
-        <div id="shop_by_category_header">
-            <h1>Shop by Category</h1>
-        </div>
-        <div id="shop_by_category_section">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="#">
-                        <img src="/images/aftermath.jpg" alt="blank image" class="img-fluid image-category">
-                        <p><strong>All Board Games</strong></p></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
-                        <img src="/images/ankh-gods-of-egypt.jpg" alt="blank image" class="img-fluid image-category">
-                        <p><strong>New Arrivals</strong></p></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
-                        <img src="/images/arkham-horror.jpg" alt="blank image" class="img-fluid image-category">
-                        <p><strong>Best Sellers</strong></p></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
-                        <img src="/images/azul-master-chocolatier.webp" alt="blank image" class="img-fluid image-category">
-                        <p><strong>Incoming Games</strong></p></a>
-                    </div>
-                </div>
-                <div class="mt-3">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
-                        <img src="/images/bloodborne.webp" alt="blank image" class="img-fluid image-category">
-                        <p><strong>Crowdfunded Games</strong></p></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
-                        <img src="/images/century-spice-road-resize.jpg" alt="blank image" class="img-fluid image-category">
-                        <p><strong>Special Editions</strong></p></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
-                        <img src="/images/chronicles-of-crime.jpg" alt="blank image" class="img-fluid image-category">
-                        <p><strong>Expansions</strong></p></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
-                        <img src="/images/coatl.webp" alt="blank image" class="img-fluid image-category">
-                        <p><strong>For the Kids</strong></p></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div id="shop_by_category_header">
+          <h1>Shop by Category</h1>
+      </div>
+      <div id="shop_by_category_section">
+          <div class="row">
+              <div class="col-lg-3 col-md-3 col-6 category">
+                  <div><a href="#">
+                      <img src="/images/aftermath.jpg" alt="blank image" class="img-fluid image-category">
+                      <p><strong>All Board Games</strong></p></a>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-6 category">
+                  <div><a href="">
+                      <img src="/images/ankh-gods-of-egypt.jpg" alt="blank image" class="img-fluid image-category">
+                      <p><strong>New Arrivals</strong></p></a>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-6 category">
+                  <div><a href="">
+                      <img src="/images/arkham-horror.jpg" alt="blank image" class="img-fluid image-category">
+                      <p><strong>Best Sellers</strong></p></a>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-6 category">
+                  <div><a href="">
+                      <img src="/images/azul-master-chocolatier.webp" alt="blank image" class="img-fluid image-category">
+                      <p><strong>Incoming Games</strong></p></a>
+                  </div>
+              </div>
+              <div class="mt-3">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-3 col-md-3 col-6 category">
+                  <div><a href="">
+                      <img src="/images/bloodborne.webp" alt="blank image" class="img-fluid image-category">
+                      <p><strong>Crowdfunded Games</strong></p></a>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-6 category">
+                  <div><a href="">
+                      <img src="/images/century-spice-road-resize.jpg" alt="blank image" class="img-fluid image-category">
+                      <p><strong>Special Editions</strong></p></a>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-6 category">
+                  <div><a href="">
+                      <img src="/images/chronicles-of-crime.jpg" alt="blank image" class="img-fluid image-category">
+                      <p><strong>Expansions</strong></p></a>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-6 category">
+                  <div><a href="">
+                      <img src="/images/coatl.webp" alt="blank image" class="img-fluid image-category">
+                      <p><strong>For the Kids</strong></p></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    
 
-    {{-- suggested game section --}}
-
-    <div class="container" id="something_you_might_like">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-12">
-                <h1>Something you might like</h1>
-            </div>
+  <div class="container" id="something_you_might_like">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+            <h1>Something you might like</h1>
         </div>
     </div>
-        <div class="container-fluid d-lg-block d-md-none d-none suggested-game-container-lg">
-            <h3>Will you find the werewolf before he finds you?</h3>
-            <div class="row">
-                <div class="col-lg-2 col-md-12 col-12">
-                        <img src="images/one-night-ultimate-werewolf-daybreak_resize.jpg" alt="blank image" class="img-fluid image-1">
-                        <img src="images/one-night-ultimate-werewolf-daybreak-side_resize.png" alt="blank image" class="img-fluid image-2">
-                        <img src="images/one-night-ultimate-werewolf-daybreak-overview_resize.png" alt="blank image" class="img-fluid image-3">
-                        <img src="images/one-night-ultimate-werewolf-daybreak-contents_resize.png" alt="blank image" class="img-fluid image-4">                              
-                </div>
-                <div class="col-lg-6 col-md-12 col-12">
-                    <div>
-                        <img src="images/one-night-ultimate-werewolf-daybreak_resize.jpg" alt="blank image" class="img-fluid main-image">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="suggested_game_description">
-                        <h4 id="lg_description"><strong> One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
-                        <p class="suggested_game_price"><strong>₱1,400.00</strong></p>
-                        <form action="" class="number-input-form">
-                            <span class="btn decrease-btn">-</span>
-                            <input type="text" class="order-number" min="0" max="9" value="0">
-                            <span class="btn increase-btn">+</span>
-                            <span class="btn add-to-cart">Add to cart</span>
-                        </form>
-                        <form action="" class="number-input-form">
-                            <span class="btn buy-now">Buy Now</span>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    <div class="container-fluid d-lg-none d-md-block d-block suggested-game-container-sm">
+</div>
+    <div class="container-fluid d-lg-block d-md-none d-none suggested-game-container-lg">
         <h3>Will you find the werewolf before he finds you?</h3>
-            <div class="row">
-                <div class="col-md-12 col-12">
-                    <img src="images/one-night-ultimate-werewolf-daybreak_resize.jpg" alt="blank image" class="img-fluid main-image">          
+        <div class="row">
+            <div class="col-lg-2 col-md-12 col-12">
+                    <img src="images/one-night-ultimate-werewolf-daybreak_resize.jpg" alt="blank image" class="img-fluid image-1">
+                    <img src="images/one-night-ultimate-werewolf-daybreak-side_resize.png" alt="blank image" class="img-fluid image-2">
+                    <img src="images/one-night-ultimate-werewolf-daybreak-overview_resize.png" alt="blank image" class="img-fluid image-3">
+                    <img src="images/one-night-ultimate-werewolf-daybreak-contents_resize.png" alt="blank image" class="img-fluid image-4">                              
+            </div>
+            <div class="col-lg-6 col-md-12 col-12">
+                <div>
+                    <img src="images/one-night-ultimate-werewolf-daybreak_resize.jpg" alt="blank image" class="img-fluid main-image">
                 </div>
-                    <div class="col-md-12 col-12 mt-3">
-                        <div class="row">
-                            <div class="col-md-3 col-6">
-                                <img src="images/one-night-ultimate-werewolf-daybreak_resize.jpg" alt="blank image" class="img-fluid image-1">
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <img src="images/one-night-ultimate-werewolf-daybreak-side_resize.png" alt="blank image" class="img-fluid image-2">
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <img src="images/one-night-ultimate-werewolf-daybreak-overview_resize.png" alt="blank image" class="img-fluid image-3">
-                            </div>
-                            <div class="col-md-3 col-6">
-                                <img src="images/one-night-ultimate-werewolf-daybreak-contents_resize.png" alt="blank image" class="img-fluid image-4">  
-                            </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="suggested_game_description">
+                    <h4 id="lg_description"><strong> One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
+                    <p class="suggested_game_price"><strong>₱1,400.00</strong></p>
+                    <form action="" class="number-input-form">
+                        <span class="btn decrease-btn">-</span>
+                        <input type="text" class="order-number" min="0" max="9" value="0">
+                        <span class="btn increase-btn">+</span>
+                        <span class="btn add-to-cart">Add to cart</span>
+                    </form>
+                    <form action="" class="number-input-form">
+                        <span class="btn buy-now">Buy Now</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container-fluid d-lg-none d-md-block d-block suggested-game-container-sm">
+    <h3>Will you find the werewolf before he finds you?</h3>
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <img src="images/one-night-ultimate-werewolf-daybreak_resize.jpg" alt="blank image" class="img-fluid main-image">          
+            </div>
+                <div class="col-md-12 col-12 mt-3">
+                    <div class="row">
+                        <div class="col-md-3 col-6">
+                            <img src="images/one-night-ultimate-werewolf-daybreak_resize.jpg" alt="blank image" class="img-fluid image-1">
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <img src="images/one-night-ultimate-werewolf-daybreak-side_resize.png" alt="blank image" class="img-fluid image-2">
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <img src="images/one-night-ultimate-werewolf-daybreak-overview_resize.png" alt="blank image" class="img-fluid image-3">
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <img src="images/one-night-ultimate-werewolf-daybreak-contents_resize.png" alt="blank image" class="img-fluid image-4">  
                         </div>
                     </div>
-                <div class="col-md-12">
-                    <div class="suggested_game_description">
-                        <h4 id="sm_description"><strong>One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
-                        <p class="suggested_game_price"><strong>₱1,400.00</strong></p>
-                        <form action="" class="number-input-form">
-                            <span class="btn decrease-btn">-</span>
-                            <input type="text" class="order-number" min="0" max="9" value="0">
-                            <span class="btn increase-btn">+</span>
-                            <span class="btn add-to-cart">Add to cart</span>
-                        </form>
-                        <form action="" class="number-input-form">
-                            <span class="btn buy-now">Buy Now</span>
-                        </form>
-                    </div>
+                </div>
+            <div class="col-md-12">
+                <div class="suggested_game_description">
+                    <h4 id="sm_description"><strong>One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
+                    <p class="suggested_game_price"><strong>₱1,400.00</strong></p>
+                    <form action="" class="number-input-form">
+                        <span class="btn decrease-btn">-</span>
+                        <input type="text" class="order-number" min="0" max="9" value="0">
+                        <span class="btn increase-btn">+</span>
+                        <span class="btn add-to-cart">Add to cart</span>
+                    </form>
+                    <form action="" class="number-input-form">
+                        <span class="btn buy-now">Buy Now</span>
+                    </form>
                 </div>
             </div>
         </div>
-    
-    <div class="container visit-shop">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-12">
-                <h1>Visit our shop to find out more</h1>
-                <button class="btn btn-success mt-3">Visit Shop</button>
-            </div>
-        </div>
     </div>
-   @include('layouts/script')
-   @include('layouts/footer')
+ 
+    @include('layouts/script')  
+    @include('layouts/footer')
 </body>
-
-
 </html>
