@@ -1,7 +1,6 @@
-#content{
+#content {
     padding-top: 5%;
 }
-   
 
 .navbar {
     position: fixed;
@@ -13,9 +12,8 @@
     font-weight: 400;
     font-style: normal;
     color: #1d1c1a;
-    
 }
-.nav-item{
+.nav-item {
     font-size: 3vh;
 }
 
@@ -31,6 +29,7 @@
 #n4 :hover {
     text-shadow: #00bf63 1px 1px 2px;
 }
+*/
 
 /* footer */
 #icon_1 :hover {
