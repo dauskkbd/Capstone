@@ -11,15 +11,23 @@
             margin-top: 10%;
         }
 
+        .sorting-section-container{
+            display: flex;
+            justify-content: right;
+            margin-top: 5%;
+            width: 94%;
+        }
+
         .filters-cards-container{
             width: 95%;
-            margin-top: 5%;
+            margin-top: 2%;
 
         }
 
         .filters{
             background-color: white;
             border-radius: 10px;
+            padding: 1%
         }
 
         .cards{
@@ -35,6 +43,9 @@
 </head>
 <body>
     @include('layouts/navbar')
+
+
+    {{-- hero banner section --}}
     <div class="container-fluid shop-banner-container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
@@ -43,6 +54,32 @@
         </div>
     </div>
 
+    <div class="container-fluid sorting-section-container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="btn-group dropstart">
+                    <button
+                    type="button"
+                    class="btn btn-primary dropdown-toggle"
+                    data-mdb-dropdown-init
+                    data-mdb-ripple-init aria-expanded="false">
+                      Dropleft
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{-- filter and cards section --}}
     <div class="container-fluid filters-cards-container">
         <div class="row">
             <div class="col-lg-2 filters">
@@ -136,6 +173,7 @@
         </div>
     </div>
 
+    @include('layouts/script')
     @include('layouts/footer')
 </body>
 </html>

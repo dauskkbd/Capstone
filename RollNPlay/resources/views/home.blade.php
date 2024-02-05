@@ -226,6 +226,19 @@
             color: white;
         }
 
+        /* visit shop section */
+        .visit-shop {
+            text-align: center;
+            margin-top: 2%;
+            margin-bottom: 5%;
+        }
+
+        .visit-shop .btn{
+            width: 20%;
+            height: 50%;
+            border-radius: 0px 20px 0px 20px;
+            background-color: rgba(0, 128, 0, 0.8);
+        }
     </style>
 </head>
 <body>
@@ -447,6 +460,15 @@
         </div>
     </div>
  
+     {{-- visit shop section --}}
+     <div class="container visit-shop">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <h1>Visit our shop to find out more</h1>
+                <button class="btn btn-success mt-3">Visit Shop</button>
+            </div>
+        </div>
+    </div>
     @include('layouts/script')  
     @include('layouts/footer')
 </body>
